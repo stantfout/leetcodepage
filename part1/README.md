@@ -1,2 +1,2 @@
-# LeetCode 1 - 100I
+# LeetCode 1 - 100
 
