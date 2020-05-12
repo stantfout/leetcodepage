@@ -1,10 +1,10 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>和为S的连续正数序列 · GitBook</title>
+        <title>和为S的连续正数序列 · 项目文档记录</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-navigator/plugin.css">
                 
             
                 
@@ -71,7 +75,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="輸入並搜尋" />
 </div>
 
             
@@ -82,7 +86,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="http://blog.wwblaba.top:8090" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -107,7 +120,7 @@
                 <a href="../part1/">
             
                     
-                    LeetCode 1 - 100I
+                    LeetCode 1 - 100
             
                 </a>
             
@@ -212,7 +225,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本書使用 GitBook 釋出
         </a>
     </li>
 </ul>
@@ -250,15 +263,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x548C;&#x4E3A;s&#x7684;&#x8FDE;&#x7EED;&#x6B63;&#x6570;&#x5E8F;&#x5217;">&#x548C;&#x4E3A;S&#x7684;&#x8FDE;&#x7EED;&#x6B63;&#x6570;&#x5E8F;&#x5217;</h1>
-<h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;"><a href="https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/" target="_blank">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</a></h2>
+                                <h1 id="&#x548C;&#x4E3A;S&#x7684;&#x8FDE;&#x7EED;&#x6B63;&#x6570;&#x5E8F;&#x5217;">&#x548C;&#x4E3A;S&#x7684;&#x8FDE;&#x7EED;&#x6B63;&#x6570;&#x5E8F;&#x5217;</h1>
+<h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
 <p>&#x5C0F;&#x660E;&#x5F88;&#x559C;&#x6B22;&#x6570;&#x5B66;,&#x6709;&#x4E00;&#x5929;&#x4ED6;&#x5728;&#x505A;&#x6570;&#x5B66;&#x4F5C;&#x4E1A;&#x65F6;,&#x8981;&#x6C42;&#x8BA1;&#x7B97;&#x51FA;9~16&#x7684;&#x548C;,&#x4ED6;&#x9A6C;&#x4E0A;&#x5C31;&#x5199;&#x51FA;&#x4E86;&#x6B63;&#x786E;&#x7B54;&#x6848;&#x662F;100&#x3002;&#x4F46;&#x662F;&#x4ED6;&#x5E76;&#x4E0D;&#x6EE1;&#x8DB3;&#x4E8E;&#x6B64;,&#x4ED6;&#x5728;&#x60F3;&#x7A76;&#x7ADF;&#x6709;&#x591A;&#x5C11;&#x79CD;&#x8FDE;&#x7EED;&#x7684;&#x6B63;&#x6570;&#x5E8F;&#x5217;&#x7684;&#x548C;&#x4E3A;100(&#x81F3;&#x5C11;&#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x6570;)&#x3002;&#x6CA1;&#x591A;&#x4E45;,&#x4ED6;&#x5C31;&#x5F97;&#x5230;&#x53E6;&#x4E00;&#x7EC4;&#x8FDE;&#x7EED;&#x6B63;&#x6570;&#x548C;&#x4E3A;100&#x7684;&#x5E8F;&#x5217;:18,19,20,21,22&#x3002;&#x73B0;&#x5728;&#x628A;&#x95EE;&#x9898;&#x4EA4;&#x7ED9;&#x4F60;,&#x4F60;&#x80FD;&#x4E0D;&#x80FD;&#x4E5F;&#x5F88;&#x5FEB;&#x7684;&#x627E;&#x51FA;&#x6240;&#x6709;&#x548C;&#x4E3A;S&#x7684;&#x8FDE;&#x7EED;&#x6B63;&#x6570;&#x5E8F;&#x5217;? Good Luck!</p>
-<h2 id="&#x601D;&#x8DEF;">&#x601D;&#x8DEF;</h2>
-<h3 id="&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x53CC;&#x6307;&#x9488;">&#x6ED1;&#x52A8;&#x7A97;&#x53E3;(&#x53CC;&#x6307;&#x9488;)</h3>
+<h2 id="&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</h2>
+<h3 id="&#x6ED1;&#x52A8;&#x7A97;&#x53E3;(&#x53CC;&#x6307;&#x9488;)">2.1. &#x6ED1;&#x52A8;&#x7A97;&#x53E3;(&#x53CC;&#x6307;&#x9488;)</h3>
 <p>&#x521D;&#x59CB;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x4E3A;1&#xFF0C;&#x5F00;&#x59CB;(left)&#x4E3A;1&#xFF0C;&#x7ED3;&#x675F;(right)&#x4E3A;1&#xFF0C;&#x901A;&#x8FC7;&#x7B49;&#x5DEE;&#x6570;&#x5217;&#x6C42;&#x548C;&#x516C;&#x5F0F;&#x53EF;&#x4EE5;&#x6C42;&#x5F97;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x7684;&#x548C;&#xFF0C;&#x4E0E;&#x76EE;&#x6807;target&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x5982;&#x679C;&#x7B49;&#x4E8E;target&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4FDD;&#x5B58;&#x7B54;&#x6848;&#xFF0C;&#x5982;&#x679C;&#x5C0F;&#x4E8E;target&#x5219;&#x8BF4;&#x660E;&#x5E94;&#x8BE5;&#x6269;&#x5927;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x7684;&#x548C;&#xFF0C;&#x5219;&#x589E;&#x52A0;right&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E;target&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x5E94;&#x8BE5;&#x51CF;&#x5C11;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x7684;&#x548C;&#xFF0C;&#x5219;&#x589E;&#x52A0;left&#x3002;</p>
-<pre><code>class Solution {
+<pre class="language-"><code>class Solution {
     public int[][] findContinuousSequence(int target) {
-        List&lt;int[]&gt; res = new ArrayList&lt;&gt;();
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int[]</span><span class="token punctuation">&gt;</span></span> res = new ArrayList&lt;&gt;();
         int left = 1;
         int right = 1;
         int sum = 1;//&#x6ED1;&#x52A8;&#x7A97;&#x53E3;[left,right]&#x7684;&#x548C;
@@ -283,7 +296,7 @@
         return res.toArray(new int[res.size()][]);
     }
 }
-</code></pre><h3 id="&#x901A;&#x8FC7;&#x6C42;&#x548C;&#x516C;&#x5F0F;&#x6765;&#x89E3;">&#x901A;&#x8FC7;&#x6C42;&#x548C;&#x516C;&#x5F0F;&#x6765;&#x89E3;</h3>
+</code></pre><h3 id="&#x901A;&#x8FC7;&#x6C42;&#x548C;&#x516C;&#x5F0F;&#x6765;&#x89E3;">2.2. &#x901A;&#x8FC7;&#x6C42;&#x548C;&#x516C;&#x5F0F;&#x6765;&#x89E3;</h3>
 <p>&#x6C42;&#x548C;&#x516C;&#x5F0F;</p>
 <blockquote>
 <p>(a1 + a1 + n - 1) * n / 2 = target</p>
@@ -294,9 +307,9 @@
 </blockquote>
 <p>target&#x5DF2;&#x77E5;&#xFF0C;&#x6B64;&#x65F6;&#x53EA;&#x8981;&#x904D;&#x5386;a1&#x6216;&#x8005;&#x904D;&#x5386;n&#xFF0C;&#x90FD;&#x53EF;&#x6C42;&#x5F97;&#x53E6;&#x4E00;&#x4E2A;&#x7684;&#x503C;&#xFF0C;&#x53EA;&#x8981;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;&#x6B63;&#x6574;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;&#x7B54;&#x6848;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x9009;&#x62E9;&#x904D;&#x5386;a1&#xFF0C;&#x5728;&#x6C42;n&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x8981;&#x7528;&#x5230;sqrt&#xFF0C;&#x5982;&#x679C;&#x904D;&#x5386;n,&#x5219;&#x4E0D;&#x9700;&#x8981;&#xFF0C;&#x6240;&#x4EE5;&#x9009;&#x62E9;&#x904D;&#x5386;n&#x3002;</p>
-<pre><code>class Solution {
+<pre class="language-"><code>class Solution {
     public int[][] findContinuousSequence(int target) {
-        List&lt;int[]&gt; list = new ArrayList&lt;&gt;();
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int[]</span><span class="token punctuation">&gt;</span></span> list = new ArrayList&lt;&gt;();
         for (int n = 2; 2 * target + n - n * n &gt; 0; n++) {
             int a1 = 2 * target + n - n * n;
             if (a1 % (2 * n) == 0) {
@@ -312,7 +325,7 @@
         return list.toArray(new int[list.size()][]);
     }
 }
-</code></pre>
+</code></pre><div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x548C;&#x4E3A;S&#x7684;&#x8FDE;&#x7EED;&#x6B63;&#x6570;&#x5E8F;&#x5217;">&#x548C;&#x4E3A;S&#x7684;&#x8FDE;&#x7EED;&#x6B63;&#x6570;&#x5E8F;&#x5217;</a></p><li><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</a></li><li><a href="#&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</a></li><ul><li><a href="#&#x6ED1;&#x52A8;&#x7A97;&#x53E3;(&#x53CC;&#x6307;&#x9488;)">2.1. &#x6ED1;&#x52A8;&#x7A97;&#x53E3;(&#x53CC;&#x6307;&#x9488;)</a></li><li><a href="#&#x901A;&#x8FC7;&#x6C42;&#x548C;&#x516C;&#x5F0F;&#x6765;&#x89E3;">2.2. &#x901A;&#x8FC7;&#x6C42;&#x548C;&#x516C;&#x5F0F;&#x6765;&#x89E3;</a></li></ul></ul></div><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -355,7 +368,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"和为S的连续正数序列","level":"1.3.1","depth":2,"next":{"title":"competition","level":"1.4","depth":1,"path":"competition/README.md","ref":"competition/README.md","articles":[]},"previous":{"title":"Others","level":"1.3","depth":1,"path":"others/README.md","ref":"others/README.md","articles":[{"title":"和为S的连续正数序列","level":"1.3.1","depth":2,"path":"others/和为S的连续正数序列.md","ref":"others/和为S的连续正数序列.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/和为S的连续正数序列.md","mtime":"2020-05-12T15:38:15.888Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T15:39:50.745Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"和为S的连续正数序列","level":"1.3.1","depth":2,"next":{"title":"competition","level":"1.4","depth":1,"path":"competition/README.md","ref":"competition/README.md","articles":[]},"previous":{"title":"Others","level":"1.3","depth":1,"path":"others/README.md","ref":"others/README.md","articles":[{"title":"和为S的连续正数序列","level":"1.3.1","depth":2,"path":"others/和为S的连续正数序列.md","ref":"others/和为S的连续正数序列.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","simple-page-toc","navigator"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"prism":{},"navigator":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"项目文档记录","language":"zh","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top:8090"}},"gitbook":"*","description":"项目文档记录"},"file":{"path":"others/和为S的连续正数序列.md","mtime":"2020-05-12T15:38:15.888Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T16:10:16.808Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
