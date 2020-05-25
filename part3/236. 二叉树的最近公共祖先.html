@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LeetCode 201 - 300 · 题解</title>
+        <title>236. 二叉树的最近公共祖先 · 题解</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="206. 反转链表.html" />
+    <link rel="next" href="../part6/" />
     
     
-    <link rel="prev" href="../part2/146. LRU缓存机制.html" />
+    <link rel="prev" href="210. 课程表 II.html" />
     
 
     </head>
@@ -265,7 +265,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="./">
             
                 <a href="./">
             
@@ -305,7 +305,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="236. 二叉树的最近公共祖先.html">
+        <li class="chapter active" data-level="1.4.3" data-path="236. 二叉树的最近公共祖先.html">
             
                 <a href="236. 二叉树的最近公共祖先.html">
             
@@ -430,7 +430,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LeetCode 201 - 300</a>
+        <a href=".." >236. 二叉树的最近公共祖先</a>
     </h1>
 </div>
 
@@ -445,8 +445,53 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>#</p>
+                                <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;, &#x627E;&#x5230;&#x8BE5;&#x6811;&#x4E2D;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#x3002;</p>
+<p>&#x767E;&#x5EA6;&#x767E;&#x79D1;&#x4E2D;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#x7684;&#x5B9A;&#x4E49;&#x4E3A;&#xFF1A;&#x201C;&#x5BF9;&#x4E8E;&#x6709;&#x6839;&#x6811; T &#x7684;&#x4E24;&#x4E2A;&#x7ED3;&#x70B9; p&#x3001;q&#xFF0C;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#x8868;&#x793A;&#x4E3A;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9; x&#xFF0C;&#x6EE1;&#x8DB3; x &#x662F; p&#x3001;q &#x7684;&#x7956;&#x5148;&#x4E14; x &#x7684;&#x6DF1;&#x5EA6;&#x5C3D;&#x53EF;&#x80FD;&#x5927;&#xFF08;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x7956;&#x5148;&#xFF09;&#x3002;&#x201D;</p>
+<p><strong>&#x8BF4;&#x660E;:</strong></p>
+<ul>
+<li>&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;&#x503C;&#x90FD;&#x662F;&#x552F;&#x4E00;&#x7684;&#x3002;</li>
+<li>p&#x3001;q &#x4E3A;&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x4E14;&#x5747;&#x5B58;&#x5728;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x4E8C;&#x53C9;&#x6811;&#x4E2D;&#x3002;</li>
+</ul>
+<h2 id="&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</h2>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x662F;&#x8FD9;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x4E00;&#x5B9A;&#x5206;&#x522B;&#x5B58;&#x5728;&#x4E8E;&#x5B83;&#x4EEC;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x91CC;&#x9762;&#x3002;&#x6216;&#x8005;p&#xFF0C;q&#x8FD9;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x4E2D;&#x4E00;&#x5B9A;&#x6709;&#x4E00;&#x4E2A;&#x662F;&#x5B83;&#x4EEC;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">private</span> <span class="token class-name">TreeNode</span> res <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token class-name">TreeNode</span> <span class="token function">lowestCommonAncestor</span><span class="token punctuation">(</span><span class="token class-name">TreeNode</span> root<span class="token punctuation">,</span> <span class="token class-name">TreeNode</span> p<span class="token punctuation">,</span> <span class="token class-name">TreeNode</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
+<span class="token comment">//&#x5BFB;&#x627E;root&#x7684;&#x5DE6;&#x53F3;&#x8282;&#x70B9;&#x6216;&#x8005;root&#x672C;&#x8EAB;&#x662F;&#x5426;&#x5305;&#x542B;p,q</span>
+<span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token class-name">TreeNode</span> root<span class="token punctuation">,</span> <span class="token class-name">TreeNode</span> p<span class="token punctuation">,</span> <span class="token class-name">TreeNode</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//&#x526A;&#x679D;&#x4E00;&#x4E0B;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//&#x5982;&#x679C;root&#x4E3A;null&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;false</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//&#x5DE6;&#x5B50;&#x6811;&#x662F;&#x5426;&#x5305;&#x542B;p,q&#x4E2D;&#x7684;&#x4E00;&#x4E2A;</span>
+    <span class="token keyword">boolean</span> f1 <span class="token operator">=</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x53F3;&#x5B50;&#x6811;&#x662F;&#x5426;&#x5305;&#x542B;p,q&#x4E2D;&#x7684;&#x4E00;&#x4E2A;</span>
+    <span class="token keyword">boolean</span> f2 <span class="token operator">=</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span>p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x5982;&#x679C;root&#x4E3A;p&#x6216;&#x8005;q,&#x53EA;&#x9700;&#x8981;root&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x5305;&#x542B;p&#x6216;q&#x5373;&#x53EF;</span>
+    <span class="token keyword">boolean</span> f3 <span class="token operator">=</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> p <span class="token operator">||</span> root <span class="token operator">==</span> q<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>f1 <span class="token operator">||</span> f2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">/*
+    &#x6700;&#x7EC8;&#x5224;&#x65AD;&#x4E3A;true&#x7684;&#x6807;&#x51C6;&#x4E3A;
+    1. root&#x4E3A;p&#x6216;q,&#x5B83;&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;
+    2. root&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x5206;&#x522B;&#x5305;&#x542B;p,q&#x3002;
+     */</span>
+    <span class="token keyword">boolean</span> flag <span class="token operator">=</span> f3 <span class="token operator">||</span> <span class="token punctuation">(</span>f1 <span class="token operator">&amp;&amp;</span> f2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x7B2C;&#x4E00;&#x4E2A;&#x4E3A;true&#x7684;root&#x8282;&#x70B9;&#x5373;&#x4E3A;&#x7ED3;&#x679C;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5B58;&#x50A8;&#x3002;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res <span class="token operator">=</span> root<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//&#x5982;&#x679C;root&#x8282;&#x70B9;&#x7B49;&#x4E8E;p&#x6216;q&#xFF0C;&#x6216;&#x8005;&#x5B83;&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x5305;&#x542B;&#x8FC7;p&#x6216;q&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;true&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;false</span>
+    <span class="token keyword">return</span> root <span class="token operator">==</span> p <span class="token operator">||</span> root <span class="token operator">==</span> q <span class="token operator">||</span> f1 <span class="token operator">||</span> f2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</a></li><li><a href="#&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</a></li></ul></div><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -473,12 +518,12 @@
 
             
                 
-                <a href="../part2/146. LRU缓存机制.html" class="navigation navigation-prev " aria-label="Previous page: 146. LRU缓存机制">
+                <a href="210. 课程表 II.html" class="navigation navigation-prev " aria-label="Previous page: 210. 课程表 II">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="206. 反转链表.html" class="navigation navigation-next " aria-label="Next page: 206. 反转链表">
+                <a href="../part6/" class="navigation navigation-next " aria-label="Next page: LeetCode 501 - 600">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -489,7 +534,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode 201 - 300","level":"1.4","depth":1,"next":{"title":"206. 反转链表","level":"1.4.1","depth":2,"path":"part3/206. 反转链表.md","ref":"part3/206. 反转链表.md","articles":[]},"previous":{"title":"146. LRU缓存机制","level":"1.3.2","depth":2,"path":"part2/146. LRU缓存机制.md","ref":"part2/146. LRU缓存机制.md","articles":[]},"dir":"neutral"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part3/README.md","mtime":"2020-05-24T16:44:42.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-25T13:54:49.633Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"236. 二叉树的最近公共祖先","level":"1.4.3","depth":2,"next":{"title":"LeetCode 501 - 600","level":"1.5","depth":1,"path":"part6/README.md","ref":"part6/README.md","articles":[{"title":"560. 和为K的子数组","level":"1.5.1","depth":2,"path":"part6/560. 和为K的子数组.md","ref":"part6/560. 和为K的子数组.md","articles":[]}]},"previous":{"title":"210. 课程表 II","level":"1.4.2","depth":2,"path":"part3/210. 课程表 II.md","ref":"part3/210. 课程表 II.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part3/236. 二叉树的最近公共祖先.md","mtime":"2020-05-25T13:52:11.670Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-25T13:54:49.633Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
