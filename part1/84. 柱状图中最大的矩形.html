@@ -1,0 +1,806 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>84. 柱状图中最大的矩形 · 题解</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../part2/" />
+    
+    
+    <link rel="prev" href="25. K 个一组翻转链表.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.wwblaba.top" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    菜鸡刷题日记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    LeetCode 1 - 100
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1. 两数之和.html">
+            
+                <a href="1. 两数之和.html">
+            
+                    
+                    1. 两数之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="2. 两数相加.html">
+            
+                <a href="2. 两数相加.html">
+            
+                    
+                    2. 两数相加
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="3. 无重复字符的最长子串.html">
+            
+                <a href="3. 无重复字符的最长子串.html">
+            
+                    
+                    3. 无重复字符的最长子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="4. 寻找两个正序数组的中位数.html">
+            
+                <a href="4. 寻找两个正序数组的中位数.html">
+            
+                    
+                    4. 寻找两个正序数组的中位数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="5. 最长回文子串.html">
+            
+                <a href="5. 最长回文子串.html">
+            
+                    
+                    5. 最长回文子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="6. Z 字形变换.html">
+            
+                <a href="6. Z 字形变换.html">
+            
+                    
+                    6. Z 字形变换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="7. 整数反转.html">
+            
+                <a href="7. 整数反转.html">
+            
+                    
+                    7. 整数反转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="21. 合并两个有序链表.html">
+            
+                <a href="21. 合并两个有序链表.html">
+            
+                    
+                    21. 合并两个有序链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="25. K 个一组翻转链表.html">
+            
+                <a href="25. K 个一组翻转链表.html">
+            
+                    
+                    25. K 个一组翻转链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.10" data-path="84. 柱状图中最大的矩形.html">
+            
+                <a href="84. 柱状图中最大的矩形.html">
+            
+                    
+                    84. 柱状图中最大的矩形
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../part2/">
+            
+                <a href="../part2/">
+            
+                    
+                    LeetCode 101 - 200
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../part2/125. 验证回文串.html">
+            
+                <a href="../part2/125. 验证回文串.html">
+            
+                    
+                    125. 验证回文串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../part2/136. 只出现一次的数字.html">
+            
+                <a href="../part2/136. 只出现一次的数字.html">
+            
+                    
+                    136. 只出现一次的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../part2/146. LRU缓存机制.html">
+            
+                <a href="../part2/146. LRU缓存机制.html">
+            
+                    
+                    146. LRU缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../part2/152. 乘积最大子数组.html">
+            
+                <a href="../part2/152. 乘积最大子数组.html">
+            
+                    
+                    152. 乘积最大子数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../part2/198. 打家劫舍.html">
+            
+                <a href="../part2/198. 打家劫舍.html">
+            
+                    
+                    198. 打家劫舍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../part3/">
+            
+                <a href="../part3/">
+            
+                    
+                    LeetCode 201 - 300
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../part3/206. 反转链表.html">
+            
+                <a href="../part3/206. 反转链表.html">
+            
+                    
+                    206. 反转链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../part3/210. 课程表 II.html">
+            
+                <a href="../part3/210. 课程表 II.html">
+            
+                    
+                    210. 课程表 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../part3/236. 二叉树的最近公共祖先.html">
+            
+                <a href="../part3/236. 二叉树的最近公共祖先.html">
+            
+                    
+                    236. 二叉树的最近公共祖先
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../part3/287. 寻找重复数.html">
+            
+                <a href="../part3/287. 寻找重复数.html">
+            
+                    
+                    287. 寻找重复数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../part4/">
+            
+                <a href="../part4/">
+            
+                    
+                    LeetCode 301 - 400
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../part4/394. 字符串解码.html">
+            
+                <a href="../part4/394. 字符串解码.html">
+            
+                    
+                    394. 字符串解码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../part6/">
+            
+                <a href="../part6/">
+            
+                    
+                    LeetCode 501 - 600
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../part6/560. 和为K的子数组.html">
+            
+                <a href="../part6/560. 和为K的子数组.html">
+            
+                    
+                    560. 和为K的子数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../part7/">
+            
+                <a href="../part7/">
+            
+                    
+                    LeetCode 601 - 700
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../part7/680. 验证回文字符串 Ⅱ.html">
+            
+                <a href="../part7/680. 验证回文字符串 Ⅱ.html">
+            
+                    
+                    680. 验证回文字符串 Ⅱ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../part10/">
+            
+                <a href="../part10/">
+            
+                    
+                    LeetCode 901 - 1000
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../part10/974. 和可被 K 整除的子数组.html">
+            
+                <a href="../part10/974. 和可被 K 整除的子数组.html">
+            
+                    
+                    974. 和可被 K 整除的子数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../others/">
+            
+                <a href="../others/">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../others/和为S的连续正数序列.html">
+            
+                <a href="../others/和为S的连续正数序列.html">
+            
+                    
+                    和为S的连续正数序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >84. 柱状图中最大的矩形</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
+<p>&#x7ED9;&#x5B9A; n &#x4E2A;&#x975E;&#x8D1F;&#x6574;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x8868;&#x793A;&#x67F1;&#x72B6;&#x56FE;&#x4E2D;&#x5404;&#x4E2A;&#x67F1;&#x5B50;&#x7684;&#x9AD8;&#x5EA6;&#x3002;&#x6BCF;&#x4E2A;&#x67F1;&#x5B50;&#x5F7C;&#x6B64;&#x76F8;&#x90BB;&#xFF0C;&#x4E14;&#x5BBD;&#x5EA6;&#x4E3A; 1 &#x3002;</p>
+<p>&#x6C42;&#x5728;&#x8BE5;&#x67F1;&#x72B6;&#x56FE;&#x4E2D;&#xFF0C;&#x80FD;&#x591F;&#x52FE;&#x52D2;&#x51FA;&#x6765;&#x7684;&#x77E9;&#x5F62;&#x7684;&#x6700;&#x5927;&#x9762;&#x79EF;&#x3002;</p>
+<p><img src="https://s1.ax1x.com/2020/05/30/tQZbwj.png" alt="tQZbwj.png">
+&#x67F1;&#x72B6;&#x56FE;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x67F1;&#x5B50;&#x7684;&#x5BBD;&#x5EA6;&#x4E3A; 1&#xFF0C;&#x7ED9;&#x5B9A;&#x7684;&#x9AD8;&#x5EA6;&#x4E3A; [2,1,5,6,2,3]&#x3002;</p>
+<p><img src="https://s1.ax1x.com/2020/05/30/tQZHmQ.png" alt="tQZHmQ.png"></p>
+<p>&#x56FE;&#x4E2D;&#x9634;&#x5F71;&#x90E8;&#x5206;&#x4E3A;&#x6240;&#x80FD;&#x52FE;&#x52D2;&#x51FA;&#x7684;&#x6700;&#x5927;&#x77E9;&#x5F62;&#x9762;&#x79EF;&#xFF0C;&#x5176;&#x9762;&#x79EF;&#x4E3A; 10 &#x4E2A;&#x5355;&#x4F4D;&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<blockquote>
+<p>&#x8F93;&#x5165;: [2,1,5,6,2,3]
+&#x8F93;&#x51FA;: 10</p>
+</blockquote>
+<h2 id="&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</h2>
+<h3 id="&#x679A;&#x4E3E;">2.1. &#x679A;&#x4E3E;</h3>
+<p>&#x679A;&#x4E3E;&#x6570;&#x7EC4;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4ECE;&#x8BE5;&#x5143;&#x7D20;&#x5411;&#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x6269;&#x5C55;&#xFF0C;&#x627E;&#x5230;&#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x7B2C;&#x4E00;&#x4E2A;&#x5C0F;&#x4E8E;&#x5B83;&#x7684;&#x6570;&#xFF0C;&#x6700;&#x540E;&#x8BA1;&#x7B97;&#x9762;&#x79EF;&#x5373;&#x53EF;&#x3002;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n2)</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">largestRectangleArea</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> left <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> right <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            left<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            right<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x5355;&#x8C03;&#x6808;">2.2. &#x5355;&#x8C03;&#x6808;</h3>
+<p>&#x679A;&#x4E3E;&#x601D;&#x8DEF;&#x91CC;&#xFF0C;&#x6700;&#x91CD;&#x8981;&#x7684;&#x76EE;&#x7684;&#x662F;&#x83B7;&#x5F97;&#x7B2C;i&#x4E2A;&#x4F4D;&#x7F6E;&#x5DE6;&#x8FB9;&#x7B2C;&#x4E00;&#x4E2A;&#x5C0F;&#x4E8E;&#x5B83;&#x7684;&#x4F4D;&#x7F6E;left&#x548C;&#x53F3;&#x8FB9;&#x7B2C;&#x4E00;&#x4E2A;&#x5C0F;&#x4E8E;&#x5B83;&#x7684;&#x4F4D;&#x7F6E;right&#xFF0C;&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x5229;&#x7528;&#x5355;&#x8C03;&#x6808;&#x5C31;&#x53EF;&#x4EE5;&#x6C42;&#x5F97;&#x8FD9;&#x4E24;&#x4E2A;&#x4F4D;&#x7F6E;&#x5462;&#xFF1F;</p>
+<p>&#x9996;&#x5148;&#x770B;&#x6211;&#x4EEC;&#x662F;&#x600E;&#x4E48;&#x7EF4;&#x62A4;&#x7684;&#x5355;&#x8C03;&#x6808;&#xFF1A;</p>
+<ol>
+<li>&#x5982;&#x679C;&#x6808;&#x4E3A;&#x7A7A;&#x6216;&#x8005;&#x8981;&#x5165;&#x6808;&#x7684;&#x5143;&#x7D20;i&#x5927;&#x4E8E;&#x6808;&#x9876;&#x5143;&#x7D20;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x5165;&#x6808;</li>
+<li>&#x5426;&#x5219;&#x628A;&#x6808;&#x9876;&#x5143;&#x7D20;&#x51FA;&#x6808;&#x3002;</li>
+</ol>
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x89C4;&#x5219;&#xFF0C;&#x6808;&#x91CC;&#x7684;&#x5143;&#x7D20;&#x4E00;&#x5B9A;&#x662F;&#x9012;&#x589E;&#x7684;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x5BF9;&#x4E8E;&#x6808;&#x9876;&#x5143;&#x7D20;top&#xFF1A;</p>
+<ol>
+<li>&#x5DE6;&#x8FB9;&#x7B2C;&#x4E00;&#x4E2A;&#x5C0F;&#x4E8E;&#x5B83;&#x7684;&#x4F4D;&#x7F6E;&#x4E00;&#x5B9A;&#x662F;&#x5B83;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;(&#x4E5F;&#x5C31;&#x662F;&#x628A;&#x5F53;&#x524D;&#x6808;&#x9876;&#x51FA;&#x6808;&#x540E;&#x7684;&#x65B0;&#x6808;&#x9876;&#x5143;&#x7D20;)&#x3002;</li>
+<li>&#x53F3;&#x8FB9;&#x7B2C;&#x4E00;&#x4E2A;&#x5C0F;&#x4E8E;&#x5B83;&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x5373;&#x5C06;&#x5165;&#x6808;&#x7684;&#x5143;&#x7D20;i&#x3002;&#x5F53;&#x7136;&#x5165;&#x6808;&#x5143;&#x7D20;i&#x4E5F;&#x53EF;&#x80FD;&#x7B49;&#x4E8E;&#x6808;&#x9876;&#x5143;&#x7D20;top&#xFF0C;&#x4F46;&#x8FD9;&#x5BF9;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x662F;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;i&#x4F4D;&#x7F6E;&#x6C42;&#x5F97;&#x7684;&#x7ED3;&#x679C;&#x4E00;&#x5B9A;&#x5927;&#x4E8E;top&#x4F4D;&#x7F6E;&#x6C42;&#x5F97;&#x90FD;&#x7ED3;&#x679C;&#x3002;</li>
+</ol>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x80FD;&#x627E;&#x5230;&#x6808;&#x9876;&#x4F4D;&#x7F6E;&#x7684;&#x5BF9;&#x4E8E;&#x679A;&#x4E3E;&#x7684;&#x7ED3;&#x679C;&#x4E86;&#xFF0C;&#x6700;&#x540E;&#x6808;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#x4E3A;&#x7A7A;&#xFF0C;&#x518D;&#x628A;&#x6808;&#x91CC;&#x7684;&#x5143;&#x7D20;&#x4F9D;&#x6B21;&#x51FA;&#x6808;&#xFF0C;&#x8BA1;&#x7B97;&#x9762;&#x79EF;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(N)&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">largestRectangleArea</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token comment">//&#x7279;&#x5224;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x5EFA;&#x7ACB;&#x6808;&#xFF0C;Java&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x7684;&#x662F;&#x4F7F;&#x7528;&#x53CC;&#x7AEF;&#x961F;&#x5217;&#x4F5C;&#x4E3A;&#x6808;&#x6765;&#x4F7F;&#x7528;</span>
+    <span class="token class-name">Deque</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//&#x5982;&#x679C;&#x6808;&#x4E3A;&#x7A7A;&#x6216;&#x8005;&#x8981;&#x5165;&#x6808;&#x7684;&#x5143;&#x7D20;i&#x5927;&#x4E8E;&#x6808;&#x9876;&#x5143;&#x7D20;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x5165;&#x6808;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>stack<span class="token punctuation">.</span><span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            stack<span class="token punctuation">.</span><span class="token function">addLast</span><span class="token punctuation">(</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">//&#x51FA;&#x6808;</span>
+            <span class="token keyword">int</span> top <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pollLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//&#x8BA1;&#x7B97;&#x9762;&#x79EF;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x786E;&#x5B9A;&#x597D;&#x533A;&#x95F4;&#x7684;&#x8303;&#x56F4;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>top<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>i <span class="token operator">-</span> stack<span class="token punctuation">.</span><span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>top<span class="token punctuation">]</span> <span class="token operator">*</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//&#x5F53;&#x6808;&#x4E0D;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x628A;&#x6808;&#x9876;&#x5143;&#x7D20;&#x51FA;&#x6808;&#xFF0C;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> top <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pollLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>top<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> stack<span class="token punctuation">.</span><span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>top<span class="token punctuation">]</span> <span class="token operator">*</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</a></li><li><a href="#&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</a></li><ul><li><a href="#&#x679A;&#x4E3E;">2.1. &#x679A;&#x4E3E;</a></li><li><a href="#&#x5355;&#x8C03;&#x6808;">2.2. &#x5355;&#x8C03;&#x6808;</a></li></ul></ul></div><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="25. K 个一组翻转链表.html" class="navigation navigation-prev " aria-label="Previous page: 25. K 个一组翻转链表">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../part2/" class="navigation navigation-next " aria-label="Next page: LeetCode 101 - 200">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"84. 柱状图中最大的矩形","level":"1.2.10","depth":2,"next":{"title":"LeetCode 101 - 200","level":"1.3","depth":1,"path":"part2/README.md","ref":"part2/README.md","articles":[{"title":"125. 验证回文串","level":"1.3.1","depth":2,"path":"part2/125. 验证回文串.md","ref":"part2/125. 验证回文串.md","articles":[]},{"title":"136. 只出现一次的数字","level":"1.3.2","depth":2,"path":"part2/136. 只出现一次的数字.md","ref":"part2/136. 只出现一次的数字.md","articles":[]},{"title":"146. LRU缓存机制","level":"1.3.3","depth":2,"path":"part2/146. LRU缓存机制.md","ref":"part2/146. LRU缓存机制.md","articles":[]},{"title":"152. 乘积最大子数组","level":"1.3.4","depth":2,"path":"part2/152. 乘积最大子数组.md","ref":"part2/152. 乘积最大子数组.md","articles":[]},{"title":"198. 打家劫舍","level":"1.3.5","depth":2,"path":"part2/198. 打家劫舍.md","ref":"part2/198. 打家劫舍.md","articles":[]}]},"previous":{"title":"25. K 个一组翻转链表","level":"1.2.9","depth":2,"path":"part1/25. K 个一组翻转链表.md","ref":"part1/25. K 个一组翻转链表.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part1/84. 柱状图中最大的矩形.md","mtime":"2020-05-30T13:31:39.987Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-30T13:46:39.133Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
