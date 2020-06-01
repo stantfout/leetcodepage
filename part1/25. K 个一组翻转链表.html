@@ -582,7 +582,33 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../partmore/5410. 课程安排 IV.html">
+        <li class="chapter " data-level="1.9.1" data-path="../partmore/1371. 每个元音包含偶数次的最长子字符串.html">
+            
+                <a href="../partmore/1371. 每个元音包含偶数次的最长子字符串.html">
+            
+                    
+                    1371. 每个元音包含偶数次的最长子字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../partmore/1431. 拥有最多糖果的孩子.html">
+            
+                <a href="../partmore/1431. 拥有最多糖果的孩子.html">
+            
+                    
+                    1431. 拥有最多糖果的孩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../partmore/5410. 课程安排 IV.html">
             
                 <a href="../partmore/5410. 课程安排 IV.html">
             
@@ -595,7 +621,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="../partmore/5411. 摘樱桃 II.html">
+        <li class="chapter " data-level="1.9.4" data-path="../partmore/5411. 摘樱桃 II.html">
             
                 <a href="../partmore/5411. 摘樱桃 II.html">
             
@@ -734,7 +760,8 @@
     <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x5982;&#x679C;&#x4E0D;&#x501F;&#x52A9;&#x989D;&#x5916;&#x7A7A;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5355;&#x72EC;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x80FD;&#x591F;&#x4EE5;O(1)&#x7684;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5B8C;&#x6210;&#x53CD;&#x8F6C;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x7684;&#x94FE;&#x8868;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;leetcode206&#x9898;&#x3002;emmmm&#x603B;&#x7684;&#x6765;&#x8BF4;&#x8FD8;&#x662F;&#x57FA;&#x672C;&#x7684;&#x94FE;&#x8868;&#x64CD;&#x4F5C;&#xFF0C;&#x96BE;&#x5EA6;&#x90FD;&#x4E0D;&#x5927;&#xFF0C;&#x4F46;&#x6574;&#x5408;&#x5230;&#x4E00;&#x5757;&#x5C31;&#x96BE;&#x4E86;&#xFF0C;&#x7EC6;&#x8282;&#x4E0A;&#x8981;&#x6CE8;&#x610F;&#x597D;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x4E3B;&#x8981;&#x662F;&#x5728;&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65F6;&#x5019;&#x501F;&#x52A9;&#x4E86;&#x6808;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x989D;&#x5916;&#x7A7A;&#x95F4;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x501F;&#x52A9;&#x989D;&#x5916;&#x7A7A;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5355;&#x72EC;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x80FD;&#x591F;&#x4EE5;O(1)&#x7684;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5B8C;&#x6210;&#x53CD;&#x8F6C;&#xFF0C;&#x8FD9;&#x4E2A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x7684;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;leetcode206&#x9898;&#xFF0C;&#x6700;&#x540E;&#x53CD;&#x8F6C;&#x5B8C;&#x5B57;&#x7B26;&#x4E32;&#x540E;&#x8981;&#x6CE8;&#x610F;&#x4E0B;&#x4E00;&#x6B65;&#x7684;&#xFF0C;&#x7EC6;&#x8282;&#x4E0A;&#x8981;&#x6CE8;&#x610F;&#x597D;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token function">reverseKGroup</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">//&#x7279;&#x5224;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -761,12 +788,12 @@
         pre<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token function">reverse</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> end<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment">//pre&#x79FB;&#x52A8;&#x5230;&#x5F53;&#x524D;pre&#x94FE;&#x8868;&#x7684;&#x5C3E;&#x8282;&#x70B9;</span>
         pre <span class="token operator">=</span> start<span class="token punctuation">;</span>
-        <span class="token comment">//end&#x7B49;&#x4E8E;&#x4E0B;&#x4E00;&#x7EC4;&#x94FE;&#x8868;&#x7684;start&#xFF0C;&#x7EE7;&#x7EED;&#x53CD;&#x8F6C;</span>
+        <span class="token comment">//end&#x7B49;&#x4E8E;&#x4E0B;&#x4E00;&#x7EC4;&#x94FE;&#x8868;&#x7684;&#x5934;&#x90E8;&#xFF0C;&#x7EE7;&#x7EED;&#x53CD;&#x8F6C;</span>
         end <span class="token operator">=</span> next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> res<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token comment">//&#x8FD9;&#x91CC;&#x4F20;&#x5165;&#x8981;&#x53CD;&#x8F6C;&#x7684;&#x94FE;&#x8868;&#x7684;&#x5934;&#x548C;&#x5C3E;&#xFF0C;&#x53CD;&#x8F6C;&#x64CD;&#x4F5C;&#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x5B9E;&#x73B0;&#xFF0C;&#x4E0D;&#x662F;&#x5F88;&#x96BE;...&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x53CD;&#x8F6C;&#x540E;&#x94FE;&#x8868;&#x7684;&#x5934;&#x8282;&#x70B9;&#x3002;</span>
+<span class="token comment">//&#x8FD9;&#x91CC;&#x4F20;&#x5165;&#x8981;&#x53CD;&#x8F6C;&#x7684;&#x94FE;&#x8868;&#x7684;&#x5934;&#x548C;&#x5C3E;&#xFF0C;&#x53CD;&#x8F6C;&#x64CD;&#x4F5C;&#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x5B9E;&#x73B0;&#xFF0C;&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x53CD;&#x8F6C;&#x540E;&#x94FE;&#x8868;&#x7684;&#x5934;&#x8282;&#x70B9;&#x3002;</span>
 <span class="token keyword">private</span> <span class="token class-name">ListNode</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> start<span class="token punctuation">,</span> <span class="token class-name">ListNode</span> end<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token class-name">ListNode</span> head <span class="token operator">=</span> start<span class="token punctuation">;</span>
     <span class="token keyword">while</span> <span class="token punctuation">(</span>head <span class="token operator">!=</span> end<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -821,7 +848,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"25. K 个一组翻转链表","level":"1.2.9","depth":2,"next":{"title":"84. 柱状图中最大的矩形","level":"1.2.10","depth":2,"path":"part1/84. 柱状图中最大的矩形.md","ref":"part1/84. 柱状图中最大的矩形.md","articles":[]},"previous":{"title":"21. 合并两个有序链表","level":"1.2.8","depth":2,"path":"part1/21. 合并两个有序链表.md","ref":"part1/21. 合并两个有序链表.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part1/25. K 个一组翻转链表.md","mtime":"2020-05-24T09:23:12.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-31T09:10:41.115Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"25. K 个一组翻转链表","level":"1.2.9","depth":2,"next":{"title":"84. 柱状图中最大的矩形","level":"1.2.10","depth":2,"path":"part1/84. 柱状图中最大的矩形.md","ref":"part1/84. 柱状图中最大的矩形.md","articles":[]},"previous":{"title":"21. 合并两个有序链表","level":"1.2.8","depth":2,"path":"part1/21. 合并两个有序链表.md","ref":"part1/21. 合并两个有序链表.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part1/25. K 个一组翻转链表.md","mtime":"2020-06-01T02:33:25.710Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-01T14:57:19.926Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>680. 验证回文字符串 Ⅱ · 题解</title>
+        <title>1431. 拥有最多糖果的孩子 · 题解</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../part10/" />
+    <link rel="next" href="5410. 课程安排 IV.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="1371. 每个元音包含偶数次的最长子字符串.html" />
     
 
     </head>
@@ -504,9 +504,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="./">
+        <li class="chapter " data-level="1.7" data-path="../part7/">
             
-                <a href="./">
+                <a href="../part7/">
             
                     
                     LeetCode 601 - 700
@@ -518,9 +518,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.7.1" data-path="680. 验证回文字符串 Ⅱ.html">
+        <li class="chapter " data-level="1.7.1" data-path="../part7/680. 验证回文字符串 Ⅱ.html">
             
-                <a href="680. 验证回文字符串 Ⅱ.html">
+                <a href="../part7/680. 验证回文字符串 Ⅱ.html">
             
                     
                     680. 验证回文字符串 Ⅱ
@@ -568,9 +568,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="../partmore/">
+        <li class="chapter " data-level="1.9" data-path="./">
             
-                <a href="../partmore/">
+                <a href="./">
             
                     
                     LeetCode 1000+
@@ -582,9 +582,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../partmore/1371. 每个元音包含偶数次的最长子字符串.html">
+        <li class="chapter " data-level="1.9.1" data-path="1371. 每个元音包含偶数次的最长子字符串.html">
             
-                <a href="../partmore/1371. 每个元音包含偶数次的最长子字符串.html">
+                <a href="1371. 每个元音包含偶数次的最长子字符串.html">
             
                     
                     1371. 每个元音包含偶数次的最长子字符串
@@ -595,9 +595,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="../partmore/1431. 拥有最多糖果的孩子.html">
+        <li class="chapter active" data-level="1.9.2" data-path="1431. 拥有最多糖果的孩子.html">
             
-                <a href="../partmore/1431. 拥有最多糖果的孩子.html">
+                <a href="1431. 拥有最多糖果的孩子.html">
             
                     
                     1431. 拥有最多糖果的孩子
@@ -608,9 +608,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="../partmore/5410. 课程安排 IV.html">
+        <li class="chapter " data-level="1.9.3" data-path="5410. 课程安排 IV.html">
             
-                <a href="../partmore/5410. 课程安排 IV.html">
+                <a href="5410. 课程安排 IV.html">
             
                     
                     5410. 课程安排 IV
@@ -621,9 +621,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.4" data-path="../partmore/5411. 摘樱桃 II.html">
+        <li class="chapter " data-level="1.9.4" data-path="5411. 摘樱桃 II.html">
             
-                <a href="../partmore/5411. 摘樱桃 II.html">
+                <a href="5411. 摘樱桃 II.html">
             
                     
                     5411. 摘樱桃 II
@@ -701,7 +701,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >680. 验证回文字符串 Ⅱ</a>
+        <a href=".." >1431. 拥有最多糖果的孩子</a>
     </h1>
 </div>
 
@@ -717,35 +717,24 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x975E;&#x7A7A;&#x5B57;&#x7B26;&#x4E32; <code>s</code>&#xFF0C;<strong>&#x6700;&#x591A;</strong>&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x5224;&#x65AD;&#x662F;&#x5426;&#x80FD;&#x6210;&#x4E3A;&#x56DE;&#x6587;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<p><strong>&#x6CE8;&#x610F;:</strong></p>
-<ol>
-<li>&#x5B57;&#x7B26;&#x4E32;&#x53EA;&#x5305;&#x542B;&#x4ECE; a-z &#x7684;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x662F;50000&#x3002;</li>
-</ol>
+<p>&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x6570;&#x7EC4; candies &#x548C;&#x4E00;&#x4E2A;&#x6574;&#x6570; extraCandies &#xFF0C;&#x5176;&#x4E2D; candies[i] &#x4EE3;&#x8868;&#x7B2C; i &#x4E2A;&#x5B69;&#x5B50;&#x62E5;&#x6709;&#x7684;&#x7CD6;&#x679C;&#x6570;&#x76EE;&#x3002;</p>
+<p>&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x5B69;&#x5B50;&#xFF0C;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x5C06;&#x989D;&#x5916;&#x7684; extraCandies &#x4E2A;&#x7CD6;&#x679C;&#x5206;&#x914D;&#x7ED9;&#x5B69;&#x5B50;&#x4EEC;&#x4E4B;&#x540E;&#xFF0C;&#x6B64;&#x5B69;&#x5B50;&#x6709; &#x6700;&#x591A; &#x7684;&#x7CD6;&#x679C;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5141;&#x8BB8;&#x6709;&#x591A;&#x4E2A;&#x5B69;&#x5B50;&#x540C;&#x65F6;&#x62E5;&#x6709; &#x6700;&#x591A; &#x7684;&#x7CD6;&#x679C;&#x6570;&#x76EE;&#x3002;</p>
 <h2 id="&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</h2>
-<p>&#x6309;&#x7167;&#x6B63;&#x5E38;&#x5224;&#x65AD;&#x56DE;&#x6587;&#x4E32;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4ECE;&#x5B57;&#x7B26;&#x4E32;&#x4E24;&#x7AEF;&#x5206;&#x522B;&#x5F80;&#x4E2D;&#x95F4;&#x5224;&#x65AD;&#xFF0C;&#x78B0;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0D;&#x76F8;&#x7B49;&#x7684;&#x4F4D;&#x7F6E;&#x540E;&#xFF0C;&#x5206;&#x522B;&#x5224;&#x65AD;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x540E;&#x662F;&#x5426;&#x4E3A;&#x56DE;&#x6587;&#x4E32;&#x5373;&#x53EF;&#x3002;</p>
-<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">validPalindrome</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> j <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">!=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token function">judge</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span>i<span class="token punctuation">,</span> j <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">judge</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        i<span class="token operator">++</span><span class="token punctuation">;</span>
-        j<span class="token operator">--</span><span class="token punctuation">;</span>
+<p>&#x6709;&#x70B9;&#x6C34;&#x7684;&#x9898;&#x76EE;&#xFF0C;&#x627E;&#x51FA;&#x6570;&#x7EC4;&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x6BD4;&#x8F83;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x52A0;&#x4E0A;extraCandies&#x662F;&#x5426;&#x6BD4;&#x6700;&#x5927;&#x503C;&#x5927;&#x5373;&#x53EF;&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Boolean</span><span class="token punctuation">&gt;</span></span> <span class="token function">kidsWithCandies</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> candies<span class="token punctuation">,</span> <span class="token keyword">int</span> extraCandies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candies<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span>candies<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">judge</span><span class="token punctuation">(</span><span class="token class-name">String</span> str<span class="token punctuation">,</span> <span class="token keyword">int</span> i <span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">!=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Boolean</span><span class="token punctuation">&gt;</span></span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> candies<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>extraCandies <span class="token operator">+</span> candies<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        i<span class="token operator">++</span><span class="token punctuation">;</span>
-        j<span class="token operator">--</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</a></li><li><a href="#&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</a></li></ul></div><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
@@ -775,12 +764,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: LeetCode 601 - 700">
+                <a href="1371. 每个元音包含偶数次的最长子字符串.html" class="navigation navigation-prev " aria-label="Previous page: 1371. 每个元音包含偶数次的最长子字符串">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../part10/" class="navigation navigation-next " aria-label="Next page: LeetCode 901 - 1000">
+                <a href="5410. 课程安排 IV.html" class="navigation navigation-next " aria-label="Next page: 5410. 课程安排 IV">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -791,7 +780,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"680. 验证回文字符串 Ⅱ","level":"1.7.1","depth":2,"next":{"title":"LeetCode 901 - 1000","level":"1.8","depth":1,"path":"part10/README.md","ref":"part10/README.md","articles":[{"title":"974. 和可被 K 整除的子数组","level":"1.8.1","depth":2,"path":"part10/974. 和可被 K 整除的子数组.md","ref":"part10/974. 和可被 K 整除的子数组.md","articles":[]}]},"previous":{"title":"LeetCode 601 - 700","level":"1.7","depth":1,"path":"part7/README.md","ref":"part7/README.md","articles":[{"title":"680. 验证回文字符串 Ⅱ","level":"1.7.1","depth":2,"path":"part7/680. 验证回文字符串 Ⅱ.md","ref":"part7/680. 验证回文字符串 Ⅱ.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part7/680. 验证回文字符串 Ⅱ.md","mtime":"2020-05-29T12:44:46.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-01T14:57:19.926Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1431. 拥有最多糖果的孩子","level":"1.9.2","depth":2,"next":{"title":"5410. 课程安排 IV","level":"1.9.3","depth":2,"path":"partmore/5410. 课程安排 IV.md","ref":"partmore/5410. 课程安排 IV.md","articles":[]},"previous":{"title":"1371. 每个元音包含偶数次的最长子字符串","level":"1.9.1","depth":2,"path":"partmore/1371. 每个元音包含偶数次的最长子字符串.md","ref":"partmore/1371. 每个元音包含偶数次的最长子字符串.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"partmore/1431. 拥有最多糖果的孩子.md","mtime":"2020-06-01T02:48:48.677Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-01T14:57:19.926Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
