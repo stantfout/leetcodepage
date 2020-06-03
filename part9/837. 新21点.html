@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>680. 验证回文字符串 Ⅱ · 题解</title>
+        <title>837. 新21点 · 题解</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,7 +69,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../part9/" />
+    <link rel="next" href="../part10/" />
     
     
     <link rel="prev" href="./" />
@@ -530,9 +530,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="./">
+        <li class="chapter " data-level="1.7" data-path="../part7/">
             
-                <a href="./">
+                <a href="../part7/">
             
                     
                     LeetCode 601 - 700
@@ -544,9 +544,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.7.1" data-path="680. 验证回文字符串 Ⅱ.html">
+        <li class="chapter " data-level="1.7.1" data-path="../part7/680. 验证回文字符串 Ⅱ.html">
             
-                <a href="680. 验证回文字符串 Ⅱ.html">
+                <a href="../part7/680. 验证回文字符串 Ⅱ.html">
             
                     
                     680. 验证回文字符串 Ⅱ
@@ -562,9 +562,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../part9/">
+        <li class="chapter " data-level="1.8" data-path="./">
             
-                <a href="../part9/">
+                <a href="./">
             
                     
                     LeetCode 801 - 900
@@ -576,9 +576,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../part9/837. 新21点.html">
+        <li class="chapter active" data-level="1.8.1" data-path="837. 新21点.html">
             
-                <a href="../part9/837. 新21点.html">
+                <a href="837. 新21点.html">
             
                     
                     837. 新21点
@@ -772,7 +772,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >680. 验证回文字符串 Ⅱ</a>
+        <a href=".." >837. 新21点</a>
     </h1>
 </div>
 
@@ -788,38 +788,70 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x975E;&#x7A7A;&#x5B57;&#x7B26;&#x4E32; <code>s</code>&#xFF0C;<strong>&#x6700;&#x591A;</strong>&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x5224;&#x65AD;&#x662F;&#x5426;&#x80FD;&#x6210;&#x4E3A;&#x56DE;&#x6587;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<p><strong>&#x6CE8;&#x610F;:</strong></p>
+<p>&#x7231;&#x4E3D;&#x4E1D;&#x53C2;&#x4E0E;&#x4E00;&#x4E2A;&#x5927;&#x81F4;&#x57FA;&#x4E8E;&#x7EB8;&#x724C;&#x6E38;&#x620F; &#x201C;21&#x70B9;&#x201D; &#x89C4;&#x5219;&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x63CF;&#x8FF0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x7231;&#x4E3D;&#x4E1D;&#x4EE5; 0 &#x5206;&#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x5728;&#x5979;&#x7684;&#x5F97;&#x5206;&#x5C11;&#x4E8E; K &#x5206;&#x65F6;&#x62BD;&#x53D6;&#x6570;&#x5B57;&#x3002; &#x62BD;&#x53D6;&#x65F6;&#xFF0C;&#x5979;&#x4ECE; [1, W] &#x7684;&#x8303;&#x56F4;&#x4E2D;&#x968F;&#x673A;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x4F5C;&#x4E3A;&#x5206;&#x6570;&#x8FDB;&#x884C;&#x7D2F;&#x8BA1;&#xFF0C;&#x5176;&#x4E2D; W &#x662F;&#x6574;&#x6570;&#x3002; &#x6BCF;&#x6B21;&#x62BD;&#x53D6;&#x90FD;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x5176;&#x7ED3;&#x679C;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x6982;&#x7387;&#x3002;</p>
+<p>&#x5F53;&#x7231;&#x4E3D;&#x4E1D;&#x83B7;&#x5F97;&#x4E0D;&#x5C11;&#x4E8E; K &#x5206;&#x65F6;&#xFF0C;&#x5979;&#x5C31;&#x505C;&#x6B62;&#x62BD;&#x53D6;&#x6570;&#x5B57;&#x3002; &#x7231;&#x4E3D;&#x4E1D;&#x7684;&#x5206;&#x6570;&#x4E0D;&#x8D85;&#x8FC7; N &#x7684;&#x6982;&#x7387;&#x662F;&#x591A;&#x5C11;&#xFF1F;</p>
+<p>&#x63D0;&#x793A;&#xFF1A;</p>
 <ol>
-<li>&#x5B57;&#x7B26;&#x4E32;&#x53EA;&#x5305;&#x542B;&#x4ECE; a-z &#x7684;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x662F;50000&#x3002;</li>
+<li>0 &lt;= K &lt;= N &lt;= 10000</li>
+<li>1 &lt;= W &lt;= 10000</li>
+<li>&#x5982;&#x679C;&#x7B54;&#x6848;&#x4E0E;&#x6B63;&#x786E;&#x7B54;&#x6848;&#x7684;&#x8BEF;&#x5DEE;&#x4E0D;&#x8D85;&#x8FC7; 10^-5&#xFF0C;&#x5219;&#x8BE5;&#x7B54;&#x6848;&#x5C06;&#x88AB;&#x89C6;&#x4E3A;&#x6B63;&#x786E;&#x7B54;&#x6848;&#x901A;&#x8FC7;&#x3002;</li>
+<li>&#x6B64;&#x95EE;&#x9898;&#x7684;&#x5224;&#x65AD;&#x9650;&#x5236;&#x65F6;&#x95F4;&#x5DF2;&#x7ECF;&#x51CF;&#x5C11;&#x3002;</li>
 </ol>
 <h2 id="&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</h2>
-<p>&#x6309;&#x7167;&#x6B63;&#x5E38;&#x5224;&#x65AD;&#x56DE;&#x6587;&#x4E32;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4ECE;&#x5B57;&#x7B26;&#x4E32;&#x4E24;&#x7AEF;&#x5206;&#x522B;&#x5F80;&#x4E2D;&#x95F4;&#x5224;&#x65AD;&#xFF0C;&#x78B0;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0D;&#x76F8;&#x7B49;&#x7684;&#x4F4D;&#x7F6E;&#x540E;&#xFF0C;&#x5206;&#x522B;&#x5224;&#x65AD;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x540E;&#x662F;&#x5426;&#x4E3A;&#x56DE;&#x6587;&#x4E32;&#x5373;&#x53EF;&#x3002;</p>
-<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">validPalindrome</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> j <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">!=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token function">judge</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span>i<span class="token punctuation">,</span> j <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">judge</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="&#x52A8;&#x6001;&#x89C4;&#x5212;(&#x8D85;&#x65F6;)">2.1. &#x52A8;&#x6001;&#x89C4;&#x5212;(&#x8D85;&#x65F6;)</h3>
+<p>&#x8FD9;&#x4E2A;&#x9898;&#x9996;&#x5148;&#x5E94;&#x8BE5;&#x80FD;&#x60F3;&#x5230;&#x662F;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x3002;&#x6211;&#x4EEC;&#x4EE4;<strong>dp[i]&#x8868;&#x793A;&#x5F97;&#x5206;&#x4E3A;i&#x7684;&#x6982;&#x7387;</strong>&#x3002;&#x90A3;&#x4E48;&#xFF0C;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x65B9;&#x7A0B;&#x600E;&#x4E48;&#x5199;&#x5462;&#xFF1F;</p>
+<p>&#x5BF9;&#x4E8E;i&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x80FD;&#x7531;&#x4EE5;&#x4E0B;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x8FC7;&#x6765;&#xFF1A;i - 1, i -2 .......i - W(&#x56E0;&#x4E3A;&#x53EF;&#x4EE5;&#x4ECE;[1,W]&#x7684;&#x8303;&#x56F4;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6570;&#x561B;&#xFF0C;&#x6240;&#x4EE5;i&#x72B6;&#x6001;&#x53EF;&#x80FD;&#x4E0E;&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#x6709;&#x5173;)&#x3002;&#x4ECE;&#x4E0A;&#x9762;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x8FC7;&#x6765;&#x90FD;&#x8981;&#x4E58;&#x4EE5; 1/W(&#x53EA;&#x6709;1/W&#x7684;&#x6982;&#x7387;&#x9009;&#x5230;&#x90A3;&#x4E2A;&#x6570;)&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x65B9;&#x7A0B;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#xFF1A;</p>
+<p>dp[i] = (dp[i - 1] + dp[i -2] +... +dp[i - W]) * (1 / W);</p>
+<p>&#x4F46;&#x6211;&#x4EEC;&#x8981;&#x786E;&#x4FDD; i - 1 &#x5230; i - W &#x7684;&#x503C; &#x5728; [0,K-1]&#x4E4B;&#x95F4;(&#x56E0;&#x4E3A;&#x53EA;&#x6709;&#x5C0F;&#x4E8E;K&#x65F6;&#x624D;&#x80FD;&#x62BD;&#x53D6;&#x6570;&#x5B57;)&#x3002; </p>
+<p>&#x6700;&#x540E;&#x7ED3;&#x679C;&#x5C31;&#x4E3A;dp[K] &#x5230; dp[N]&#x7684;&#x548C;&#x3002;(&#x56E0;&#x4E3A;&#x6700;&#x7EC8;&#x5F97;&#x5206;&#x4E0D;&#x80FD;&#x5C0F;&#x4E8E;K&#xFF0C;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;N)</p>
+<p>&#x90A3;&#x4E48;&#x4EE3;&#x7801;&#x5C31;&#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x6765;&#x4E86;&#xFF1A;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">new21Game</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token class-name">N</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token class-name">W</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token class-name">N</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> tmp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1.0</span> <span class="token operator">/</span> <span class="token class-name">W</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token class-name">N</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> <span class="token class-name">W</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">-</span> j <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> i <span class="token operator">-</span> j <span class="token operator">&lt;=</span> <span class="token class-name">K</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> j<span class="token punctuation">]</span> <span class="token operator">*</span> tmp<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-        i<span class="token operator">++</span><span class="token punctuation">;</span>
-        j<span class="token operator">--</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">judge</span><span class="token punctuation">(</span><span class="token class-name">String</span> str<span class="token punctuation">,</span> <span class="token keyword">int</span> i <span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">!=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        i<span class="token operator">++</span><span class="token punctuation">;</span>
-        j<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token class-name">K</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token class-name">N</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res <span class="token operator">+=</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</a></li><li><a href="#&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</a></li></ul></div><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+<h3 id="&#x4F18;&#x5316;">2.2. &#x4F18;&#x5316;</h3>
+<p>&#x4E0A;&#x9762;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x7684;&#x4E8B;&#x4EF6;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(NW)&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x6C42;(dp[i - 1] + dp[i -2] +... +dp[i - W]) &#x65F6;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(W)&#xFF0C;&#x4F46;&#x518D;&#x6C42;dp[i]&#x65F6;dp[i - 1]&#x5230;dp[i-w]&#x7684;&#x503C;&#x90FD;&#x5DF2;&#x7ECF;&#x786E;&#x5B9A;&#x4E86;&#xFF0C;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x5FAA;&#x73AF;&#x904D;&#x5386;&#x52A0;&#x8D77;&#x6765;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x524D;&#x7F00;&#x548C;&#x7684;&#x65B9;&#x5F0F;&#x6C42;&#x89E3;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x524D;&#x7F00;&#x548C;sum&#xFF0C;&#x5728;&#x6C42;(dp[i - 1] + dp[i -2] +... +dp[i - W])&#x901A;&#x8FC7;&#x524D;&#x7F00;&#x548C;&#x76F8;&#x51CF;&#x5C31;&#x53EF;&#x4EE5;O(1)&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5C31;&#x548C;&#x4E86;&#xFF0C;&#x6574;&#x4F53;&#x590D;&#x6742;&#x5EA6;&#x5C31;&#x964D;&#x5230;&#x4E86;O(N)&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">new21Game</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token class-name">N</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token class-name">W</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//&#x7279;&#x5224;K=0&#x65F6;&#x7ED3;&#x679C;&#x4E3A;1</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">K</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token class-name">N</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sum <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token class-name">N</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    sum<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> tmp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1.0</span> <span class="token operator">/</span> <span class="token class-name">W</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token class-name">N</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//&#x8FD9;&#x91CC;&#x901A;&#x8FC7;&#x524D;&#x7F00;&#x548C;&#x6C42;&#x89E3;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x8FB9;&#x754C;&#x95EE;&#x9898;</span>
+        <span class="token keyword">double</span> sum1 <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">-</span> <span class="token class-name">W</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">?</span> sum<span class="token punctuation">[</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">-</span> <span class="token class-name">W</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">double</span> sum2 <span class="token operator">=</span> sum<span class="token punctuation">[</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token class-name">K</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>sum2 <span class="token operator">-</span> sum1<span class="token punctuation">)</span> <span class="token operator">*</span> tmp<span class="token punctuation">;</span>
+        sum<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">double</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token class-name">K</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token class-name">N</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res <span class="token operator">+=</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</a></li><li><a href="#&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</a></li><ul><li><a href="#&#x52A8;&#x6001;&#x89C4;&#x5212;(&#x8D85;&#x65F6;)">2.1. &#x52A8;&#x6001;&#x89C4;&#x5212;(&#x8D85;&#x65F6;)</a></li><li><a href="#&#x4F18;&#x5316;">2.2. &#x4F18;&#x5316;</a></li></ul></ul></div><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -846,12 +878,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: LeetCode 601 - 700">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: LeetCode 801 - 900">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../part9/" class="navigation navigation-next " aria-label="Next page: LeetCode 801 - 900">
+                <a href="../part10/" class="navigation navigation-next " aria-label="Next page: LeetCode 901 - 1000">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -862,7 +894,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"680. 验证回文字符串 Ⅱ","level":"1.7.1","depth":2,"next":{"title":"LeetCode 801 - 900","level":"1.8","depth":1,"path":"part9/README.md","ref":"part9/README.md","articles":[{"title":"837. 新21点","level":"1.8.1","depth":2,"path":"part9/837. 新21点.md","ref":"part9/837. 新21点.md","articles":[]}]},"previous":{"title":"LeetCode 601 - 700","level":"1.7","depth":1,"path":"part7/README.md","ref":"part7/README.md","articles":[{"title":"680. 验证回文字符串 Ⅱ","level":"1.7.1","depth":2,"path":"part7/680. 验证回文字符串 Ⅱ.md","ref":"part7/680. 验证回文字符串 Ⅱ.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part7/680. 验证回文字符串 Ⅱ.md","mtime":"2020-05-29T12:44:46.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-03T04:35:56.509Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"837. 新21点","level":"1.8.1","depth":2,"next":{"title":"LeetCode 901 - 1000","level":"1.9","depth":1,"path":"part10/README.md","ref":"part10/README.md","articles":[{"title":"974. 和可被 K 整除的子数组","level":"1.9.1","depth":2,"path":"part10/974. 和可被 K 整除的子数组.md","ref":"part10/974. 和可被 K 整除的子数组.md","articles":[]}]},"previous":{"title":"LeetCode 801 - 900","level":"1.8","depth":1,"path":"part9/README.md","ref":"part9/README.md","articles":[{"title":"837. 新21点","level":"1.8.1","depth":2,"path":"part9/837. 新21点.md","ref":"part9/837. 新21点.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part9/837. 新21点.md","mtime":"2020-06-03T04:01:02.122Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-03T04:35:56.509Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
