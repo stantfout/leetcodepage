@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>7. 整数反转 · 题解</title>
+        <title>10. 正则表达式匹配 · 题解</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="9. 回文数.html" />
+    <link rel="next" href="14. 最长公共前缀.html" />
     
     
-    <link rel="prev" href="6. Z 字形变换.html" />
+    <link rel="prev" href="9. 回文数.html" />
     
 
     </head>
@@ -215,7 +215,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.7" data-path="7. 整数反转.html">
+        <li class="chapter " data-level="1.2.7" data-path="7. 整数反转.html">
             
                 <a href="7. 整数反转.html">
             
@@ -241,7 +241,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="10. 正则表达式匹配.html">
+        <li class="chapter active" data-level="1.2.9" data-path="10. 正则表达式匹配.html">
             
                 <a href="10. 正则表达式匹配.html">
             
@@ -1012,7 +1012,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >7. 整数反转</a>
+        <a href=".." >10. 正则表达式匹配</a>
     </h1>
 </div>
 
@@ -1028,30 +1028,92 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
-<p>&#x7ED9;&#x51FA;&#x4E00;&#x4E2A; 32 &#x4F4D;&#x7684;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5C06;&#x8FD9;&#x4E2A;&#x6574;&#x6570;&#x4E2D;&#x6BCF;&#x4F4D;&#x4E0A;&#x7684;&#x6570;&#x5B57;&#x8FDB;&#x884C;&#x53CD;&#x8F6C;&#x3002;</p>
-<p><strong>&#x6CE8;&#x610F;:</strong></p>
-<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x7684;&#x73AF;&#x5883;&#x53EA;&#x80FD;&#x5B58;&#x50A8;&#x5F97;&#x4E0B; 32 &#x4F4D;&#x7684;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#xFF0C;&#x5219;&#x5176;&#x6570;&#x503C;&#x8303;&#x56F4;&#x4E3A; [&#x2212;231,  231 &#x2212; 1]&#x3002;&#x8BF7;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x5047;&#x8BBE;&#xFF0C;&#x5982;&#x679C;&#x53CD;&#x8F6C;&#x540E;&#x6574;&#x6570;&#x6EA2;&#x51FA;&#x90A3;&#x4E48;&#x5C31;&#x8FD4;&#x56DE; 0&#x3002;</p>
+<p>&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; <code>s</code> &#x548C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x89C4;&#x5F8B; <code>p</code>&#xFF0C;&#x8BF7;&#x4F60;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x652F;&#x6301; <code>&apos;.&apos;</code> &#x548C; <code>&apos;*&apos;</code> &#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x3002;</p>
+<blockquote>
+<p>&apos;.&apos; &#x5339;&#x914D;&#x4EFB;&#x610F;&#x5355;&#x4E2A;&#x5B57;&#x7B26;
+&apos;*&apos; &#x5339;&#x914D;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x524D;&#x9762;&#x7684;&#x90A3;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</p>
+</blockquote>
+<p>&#x6240;&#x8C13;&#x5339;&#x914D;&#xFF0C;&#x662F;&#x8981;&#x6DB5;&#x76D6; <code>&#x6574;&#x4E2A;</code> &#x5B57;&#x7B26;&#x4E32; s&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x90E8;&#x5206;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p><strong>&#x8BF4;&#x660E;:</strong></p>
+<ul>
+<li>s &#x53EF;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x4E14;&#x53EA;&#x5305;&#x542B;&#x4ECE; a-z &#x7684;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;</li>
+<li>p &#x53EF;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x4E14;&#x53EA;&#x5305;&#x542B;&#x4ECE; a-z &#x7684;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#xFF0C;&#x4EE5;&#x53CA;&#x5B57;&#x7B26; . &#x548C; *&#x3002;</li>
+</ul>
 <h2 id="&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</h2>
-<h3 id="&#x6570;&#x5B66;">2.1. &#x6570;&#x5B66;</h3>
-<p>&#x6CE8;&#x610F;&#x5904;&#x7406;&#x597D;int&#x8D8A;&#x754C;&#x5C31;&#x597D;&#x4E86;&#x3002;</p>
-<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> temp<span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        temp <span class="token operator">=</span> x <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
-        x <span class="token operator">/=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>res <span class="token operator">&gt;</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">||</span> <span class="token punctuation">(</span>res <span class="token operator">==</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">&amp;&amp;</span> temp <span class="token operator">&gt;</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>res <span class="token operator">&lt;</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span>MIN_VALUE <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">||</span> <span class="token punctuation">(</span>res <span class="token operator">==</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span>MIN_VALUE <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">&amp;&amp;</span> temp <span class="token operator">&lt;</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        res <span class="token operator">=</span> res <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> temp<span class="token punctuation">;</span>
+<h3 id="&#x9012;&#x5F52;">2.1. &#x9012;&#x5F52;</h3>
+<p>&#x672C;&#x9898;&#x96BE;&#x70B9;&#x5728;&#x4E8E;<code>*</code>&#x5B57;&#x7B26;&#x7684;&#x5339;&#x914D;&#x4E0A;</p>
+<ul>
+<li><code>*</code>&#x6709;&#x65F6;&#x9700;&#x8981;&#x5339;&#x914D;0&#x4E2A;&#x5B57;&#x7B26;</li>
+</ul>
+<blockquote>
+<p>s = &quot;aaa&quot;</p>
+<p>p = &quot;ab*aa&quot;</p>
+<p>&#x6B64;&#x65F6;*&#x9700;&#x8981;&#x8BA9;b&#x5339;&#x914D;0&#x6B21;</p>
+</blockquote>
+<ul>
+<li><code>*</code>&#x5339;&#x914D;&#x591A;&#x4E2A;</li>
+</ul>
+<blockquote>
+<p>s = &quot;aaa&quot;</p>
+<p>p = &quot;a*a&quot;</p>
+<p>*&#x9700;&#x8981;&#x8BA9;a&#x5339;&#x914D;2&#x6B21;&#xFF0C;&#x4E0D;&#x80FD;&#x662F;1&#x6B21;&#x6216;3&#x6B21;</p>
+</blockquote>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5BF9;<code>*</code>&#x8FDB;&#x884C;&#x7279;&#x5224;&#xFF0C;&#x6A21;&#x62DF;&#x51FA;&#x5339;&#x914D;0&#x6B21;&#x6216;&#x591A;&#x6B21;&#x7684;&#x60C5;&#x51B5;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isMatch</span><span class="token punctuation">(</span><span class="token class-name">String</span> text<span class="token punctuation">,</span> <span class="token class-name">String</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//&#x5F53;&#x5339;&#x914D;&#x4E32;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5224;&#x65AD;&#x6587;&#x672C;&#x4E32;&#x662F;&#x5426;&#x4E5F;&#x7ED3;&#x675F;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> text<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token comment">//&#x5224;&#x65AD;&#x9996;&#x4E2A;&#x5B57;&#x7B26;&#x662F;&#x5426;&#x5339;&#x914D;</span>
+    <span class="token keyword">boolean</span> first <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">!</span>text<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+            <span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">==</span> text<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">||</span> pattern<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> pattern<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&apos;*&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//&#x5224;&#x65AD;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x540E;&#x4E3A;*&#x7684;&#x60C5;&#x51B5;&#xFF0C;*&#x53EF;&#x4EE5;&#x5339;&#x914D;0&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#xFF0C;</span>
+        <span class="token comment">//return&#x8BED;&#x53E5;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x4E3A;&#x5339;&#x914D;0&#x4E2A;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x540E;&#x9762;&#x4E3A;&#x5C1D;&#x8BD5;&#x5339;&#x914D;&#x591A;&#x4E2A;&#xFF0C;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token function">isMatch</span><span class="token punctuation">(</span>text<span class="token punctuation">,</span>pattern<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span>
+                <span class="token punctuation">(</span>first <span class="token operator">&amp;&amp;</span> <span class="token function">isMatch</span><span class="token punctuation">(</span>text<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>pattern<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">//&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x540E;&#x4E0D;&#x4E3A;*&#xFF0C;&#x76F4;&#x63A5;&#x5F80;&#x540E;&#x5339;&#x914D;&#x3002;</span>
+        <span class="token keyword">return</span> first <span class="token operator">&amp;&amp;</span> <span class="token function">isMatch</span><span class="token punctuation">(</span>text<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pattern<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</a></li><li><a href="#&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</a></li><ul><li><a href="#&#x6570;&#x5B66;">2.1. &#x6570;&#x5B66;</a></li></ul></ul></div><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+<h3 id="&#x52A8;&#x6001;&#x89C4;&#x5212;">2.2. &#x52A8;&#x6001;&#x89C4;&#x5212;</h3>
+<p>dp[i] [j] &#x8868;&#x793A;text&#x7684;&#x524D;i&#x4E2A;&#x5B57;&#x7B26;&#x80FD;&#x5426;&#x548C;pattern&#x7684;&#x524D;j&#x4E2A;&#x5B57;&#x7B26;&#x5339;&#x914D;</p>
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x5BF9;pattern&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF1A;</p>
+<ul>
+<li>pattern[j - 1] ==  <code>*</code>  <ul>
+<li>&#x5F53;&#x9700;&#x8981;&#x5339;&#x914D;0&#x4E2A;&#x5B57;&#x7B26;&#x65F6;&#xFF1A;dp[i] [j] = dp[i] [j - 2]</li>
+<li>&#x5F53;&#x9700;&#x8981;&#x5339;&#x914D;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x65F6;&#xFF1A; dp[i] [j] = dp[i - 1] [j] &#x5E76;&#x4E14; j-2&#x4F4D;&#x7F6E;&#x5B57;&#x7B26;&#x80FD;&#x5339;&#x914D;i - 1&#x4F4D;&#x7F6E;&#x5B57;&#x7B26;(&#x4F8B;&#x5982;XXXa&#x548C;XXXa<em> &#x5339;&#x914D;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x786E;&#x4FDD;text&#x5B57;&#x7B26;&#x4E32;&#x7684;XXX&#x548C;pattern&#x5B57;&#x7B26;&#x4E32;&#x7684;XXXa</em> &#x662F;&#x5339;&#x914D;&#x7684;&#xFF0C;XXXaa&#x548C;XXXa<em>  &#x5339;&#x914D;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x786E;&#x4FDD;text&#x5B57;&#x7B26;&#x4E32;&#x7684;XXXa&#x548C;pattern&#x5B57;&#x7B26;&#x4E32;&#x7684;XXXa</em> &#x662F;&#x5339;&#x914D;&#x7684;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;)</li>
+</ul>
+</li>
+<li>pattern[j - 1] &#x4E3A;&#x5176;&#x4ED6;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x5224;&#x65AD;&#x662F;&#x5426;&#x5339;&#x914D;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isMatch</span><span class="token punctuation">(</span><span class="token class-name">String</span> text<span class="token punctuation">,</span> <span class="token class-name">String</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> text<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> m <span class="token operator">=</span> pattern<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">boolean</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">boolean</span><span class="token punctuation">[</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>m <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> m<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&apos;*&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>text<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> pattern<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">||</span> pattern<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span>
+                            <span class="token punctuation">(</span>text<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> pattern<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">||</span> pattern<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;">1. &#x9898;&#x76EE;&#x63CF;&#x8FF0;</a></li><li><a href="#&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</a></li><ul><li><a href="#&#x9012;&#x5F52;">2.1. &#x9012;&#x5F52;</a></li><li><a href="#&#x52A8;&#x6001;&#x89C4;&#x5212;">2.2. &#x52A8;&#x6001;&#x89C4;&#x5212;</a></li></ul></ul></div><a href="#&#x9898;&#x76EE;&#x63CF;&#x8FF0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -1078,12 +1140,12 @@
 
             
                 
-                <a href="6. Z 字形变换.html" class="navigation navigation-prev " aria-label="Previous page: 6. Z 字形变换">
+                <a href="9. 回文数.html" class="navigation navigation-prev " aria-label="Previous page: 9. 回文数">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="9. 回文数.html" class="navigation navigation-next " aria-label="Next page: 9. 回文数">
+                <a href="14. 最长公共前缀.html" class="navigation navigation-next " aria-label="Next page: 14. 最长公共前缀">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1094,7 +1156,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7. 整数反转","level":"1.2.7","depth":2,"next":{"title":"9. 回文数","level":"1.2.8","depth":2,"path":"part1/9. 回文数.md","ref":"part1/9. 回文数.md","articles":[]},"previous":{"title":"6. Z 字形变换","level":"1.2.6","depth":2,"path":"part1/6. Z 字形变换.md","ref":"part1/6. Z 字形变换.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part1/7. 整数反转.md","mtime":"2020-06-14T12:42:31.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-14T01:38:18.176Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"10. 正则表达式匹配","level":"1.2.9","depth":2,"next":{"title":"14. 最长公共前缀","level":"1.2.10","depth":2,"path":"part1/14. 最长公共前缀.md","ref":"part1/14. 最长公共前缀.md","articles":[]},"previous":{"title":"9. 回文数","level":"1.2.8","depth":2,"path":"part1/9. 回文数.md","ref":"part1/9. 回文数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part1/10. 正则表达式匹配.md","mtime":"2020-07-06T11:55:46.285Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-14T01:38:18.176Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,7 +69,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="21. 合并两个有序链表.html" />
+    <link rel="next" href="16. 最接近的三数之和.html" />
     
     
     <link rel="prev" href="14. 最长公共前缀.html" />
@@ -241,7 +241,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="14. 最长公共前缀.html">
+        <li class="chapter " data-level="1.2.9" data-path="10. 正则表达式匹配.html">
+            
+                <a href="10. 正则表达式匹配.html">
+            
+                    
+                    10. 正则表达式匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="14. 最长公共前缀.html">
             
                 <a href="14. 最长公共前缀.html">
             
@@ -254,7 +267,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.10" data-path="15. 三数之和.html">
+        <li class="chapter active" data-level="1.2.11" data-path="15. 三数之和.html">
             
                 <a href="15. 三数之和.html">
             
@@ -267,7 +280,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.11" data-path="21. 合并两个有序链表.html">
+        <li class="chapter " data-level="1.2.12" data-path="16. 最接近的三数之和.html">
+            
+                <a href="16. 最接近的三数之和.html">
+            
+                    
+                    16. 最接近的三数之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="21. 合并两个有序链表.html">
             
                 <a href="21. 合并两个有序链表.html">
             
@@ -280,7 +306,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.12" data-path="25. K 个一组翻转链表.html">
+        <li class="chapter " data-level="1.2.14" data-path="25. K 个一组翻转链表.html">
             
                 <a href="25. K 个一组翻转链表.html">
             
@@ -293,7 +319,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.13" data-path="54. 螺旋矩阵.html">
+        <li class="chapter " data-level="1.2.15" data-path="54. 螺旋矩阵.html">
             
                 <a href="54. 螺旋矩阵.html">
             
@@ -306,7 +332,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.14" data-path="70. 爬楼梯.html">
+        <li class="chapter " data-level="1.2.16" data-path="67. 二进制求和.html">
+            
+                <a href="67. 二进制求和.html">
+            
+                    
+                    67. 二进制求和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="70. 爬楼梯.html">
             
                 <a href="70. 爬楼梯.html">
             
@@ -319,7 +358,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.15" data-path="84. 柱状图中最大的矩形.html">
+        <li class="chapter " data-level="1.2.18" data-path="84. 柱状图中最大的矩形.html">
             
                 <a href="84. 柱状图中最大的矩形.html">
             
@@ -993,7 +1032,7 @@
 <p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x7B54;&#x6848;&#x4E2D;&#x4E0D;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x91CD;&#x590D;&#x7684;&#x4E09;&#x5143;&#x7EC4;&#x3002;</p>
 <h2 id="&#x601D;&#x8DEF;">2. &#x601D;&#x8DEF;</h2>
 <h3 id="&#x53CC;&#x6307;&#x9488;">2.1. &#x53CC;&#x6307;&#x9488;</h3>
-<p>&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4E00;&#x904D;nums&#xFF0C;&#x627E;&#x51FA;[i-1,n]&#x4F4D;&#x7F6E;&#x4E24;&#x6570;&#x548C;&#x7B49;&#x4E8E;-nums[i]&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x904D;&#x5386;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n)&#xFF0C;&#x627E;&#x51FA;&#x4E24;&#x6570;&#x548C;&#x7B49;&#x4E8E;target&#x6700;&#x4F4E;&#x4E5F;&#x53EF;&#x4EE5;&#x4E3A;O(n)&#xFF0C;&#x6574;&#x4F53;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n2)&#x3002;&#x5728;&#x627E;&#x51FA;&#x627E;&#x51FA;&#x4E24;&#x6570;&#x548C;&#x7B49;&#x4E8E;target&#x6CA1;&#x6709;&#x91C7;&#x7528;Hash&#x8868;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x7B54;&#x6848;&#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x91CD;&#x590D;&#x7684;&#x4E09;&#x5143;&#x7EC4;&#xFF0C;&#x91C7;&#x7528;Hash&#x8868;&#x4E0D;&#x5BB9;&#x6613;&#x53BB;&#x91CD;&#xFF0C;&#x8FD9;&#x91CC;&#x91C7;&#x7528;&#x7684;&#x662F;&#x53CC;&#x6307;&#x9488;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x63D0;&#x524D;&#x5BF9;nums&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4E00;&#x904D;nums&#xFF0C;&#x627E;&#x51FA;[i-1,n]&#x4F4D;&#x7F6E;&#x4E24;&#x6570;&#x548C;&#x7B49;&#x4E8E;-nums[i]&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n)&#xFF0C;&#x627E;&#x51FA;&#x4E24;&#x6570;&#x548C;&#x7B49;&#x4E8E;target&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x6700;&#x4F4E;&#x4E5F;&#x53EF;&#x4EE5;&#x4E3A;O(n)&#xFF0C;&#x6574;&#x4F53;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n2)&#x3002;&#x5728;&#x627E;&#x51FA;&#x627E;&#x51FA;&#x4E24;&#x6570;&#x548C;&#x7B49;&#x4E8E;target&#x6CA1;&#x6709;&#x91C7;&#x7528;Hash&#x8868;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x7B54;&#x6848;&#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x91CD;&#x590D;&#x7684;&#x4E09;&#x5143;&#x7EC4;&#xFF0C;&#x91C7;&#x7528;Hash&#x8868;&#x4E0D;&#x5BB9;&#x6613;&#x53BB;&#x91CD;&#xFF0C;&#x8FD9;&#x91CC;&#x91C7;&#x7528;&#x7684;&#x662F;&#x53CC;&#x6307;&#x9488;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x63D0;&#x524D;&#x5BF9;nums&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</p>
 <pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> <span class="token function">threeSum</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">int</span> n <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
     <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1070,7 +1109,7 @@
                 </a>
                 
                 
-                <a href="21. 合并两个有序链表.html" class="navigation navigation-next " aria-label="Next page: 21. 合并两个有序链表">
+                <a href="16. 最接近的三数之和.html" class="navigation navigation-next " aria-label="Next page: 16. 最接近的三数之和">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1081,7 +1120,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"15. 三数之和","level":"1.2.10","depth":2,"next":{"title":"21. 合并两个有序链表","level":"1.2.11","depth":2,"path":"part1/21. 合并两个有序链表.md","ref":"part1/21. 合并两个有序链表.md","articles":[]},"previous":{"title":"14. 最长公共前缀","level":"1.2.9","depth":2,"path":"part1/14. 最长公共前缀.md","ref":"part1/14. 最长公共前缀.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part1/15. 三数之和.md","mtime":"2020-06-14T12:43:28.210Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-15T02:29:34.245Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"15. 三数之和","level":"1.2.11","depth":2,"next":{"title":"16. 最接近的三数之和","level":"1.2.12","depth":2,"path":"part1/16. 最接近的三数之和.md","ref":"part1/16. 最接近的三数之和.md","articles":[]},"previous":{"title":"14. 最长公共前缀","level":"1.2.10","depth":2,"path":"part1/14. 最长公共前缀.md","ref":"part1/14. 最长公共前缀.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","prism","-highlight","simple-page-toc","navigator","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"navigator":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"题解","language":"zh-hans","links":{"sidebar":{"我的博客":"http://blog.wwblaba.top"}},"gitbook":"*","description":"题解"},"file":{"path":"part1/15. 三数之和.md","mtime":"2020-07-06T05:49:05.576Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-14T01:38:18.176Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
